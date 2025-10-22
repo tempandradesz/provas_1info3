@@ -6,4 +6,24 @@
     Usando for...of, calcule o preço total da compra, aplicando o desconto informado pelo usuário apenas nos produtos que custam mais de R$ 60,00.
     Apresente para o usuário qual será o valor final da compra.
     */
+
+    let compras = [50.00, 15.50, 120.00, 80];
+
+
+    const descontoUsuario = Number(prompt(`Informe um persentual de desconto que será aplicado nos preços do carrinho de compras: `));
+
+
+    let desconto = 0;
+    let descontoAplicado = 0;
+    let valorFinal = 0;
+
+    for (let item of compras) {
+        desconto = (item / 100) * descontoUsuario;
+        descontoAplicado = item - desconto;
+        valorFinal += descontoAplicado;
+
+    }
+
+    alert(`O valor final com desconto aplicado é: R$${valorFinal.toFixed(2)}.`);
+
 </script>
